@@ -1,0 +1,17 @@
+<div class="rating_card">
+  <div *ngIf="!isCollapsed"><div id="message">
+    Спасибо за отзыв!
+  </div>
+</div>
+  <p style="font-size: 16px; font-weight: initial;">Оцените пожалуйста чат бота</p>
+  <div class="rating_bt" onclick="setTimeout(function(){
+	document.getElementById('message').style.display = 'none';
+}, 5000);">
+    <button class="rating_btn1" (click)="increase()" ><img src="https://cloclo10.cloud.mail.ru/inline/%D1%87%D0%B0%D1%82-%D0%B1%D0%BE%D1%82-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8/ic/050-happy.png?etag=072C77C3951C10C336F3EA6D74EDA954831788F5&x-email=taliasaz%40bk.ru" width="40" height="40" alt="image description">
+    </button>
+    <button class="rating_btn2" (click)="decrease()"><img src="https://cloclo20.cloud.mail.ru/inline/%D1%87%D0%B0%D1%82-%D0%B1%D0%BE%D1%82-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B8/ic/047-sad.png?etag=0AB4C079C09E3A8E6AD7D1939B70E6A4080F2123&x-email=taliasaz%40bk.ru" width="40" height="40" alt="image description">
+    </button>
+  </div>
+</div>
+<!--{{appCounterService.counterg}} {{appCounterService.counterb}}-->
+

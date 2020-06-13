@@ -1,0 +1,30 @@
+
+.rating_card{
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  border: 0;
+}
+.rating_bt{
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border: 0;
+}
+.rating_btn1, .rating_btn2{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  background: transparent;
+}
+.rating_btn2{
+  margin-left: 50px;
+}
+button,
+button:active,
+button:focus {
+  outline: none;
+}
