@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {DoBComponent} from './do-b.component';
 
-import { DoBComponent } from './do-b.component';
 
 describe('DoBComponent', () => {
   let component: DoBComponent;
@@ -8,7 +8,7 @@ describe('DoBComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DoBComponent ]
+      declarations: [ DoBComponent ],
     })
     .compileComponents();
   }));
