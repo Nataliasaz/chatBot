@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import {AdminComponent} from './admin.component';
 import {AuthGuard} from '../pages/services/auth.guard';
+import {AuthService} from '../pages/services/auth.service';
 
 
 const routes: Routes = [{
@@ -26,6 +27,7 @@ const routes: Routes = [{
   //   ],
   path: '',
   component: AdminComponent,
+  canActivate: [AuthGuard],
   children: [
     {
       path: 'charts',
@@ -48,6 +50,7 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  providers: [AuthService, AuthGuard],
 })
 export class AdminRoutingModule {
 }

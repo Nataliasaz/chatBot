@@ -3,8 +3,8 @@ export interface User {
   password: string;
   rememberMe?: boolean;
 }
-
 export interface SAuthResponse {
-  idToken: string;
+  id_token: string;
+  status: string;
   expiresIn: string;
 }

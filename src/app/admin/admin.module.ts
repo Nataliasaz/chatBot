@@ -6,12 +6,14 @@ import {AdminComponent} from './admin.component';
 import {AuthService} from '../pages/services/auth.service';
 import {AuthGuard} from '../pages/services/auth.guard';
 import {RouterModule} from '@angular/router';
+import {SharedModule} from '../pages/shared.module';
 
 @NgModule({
   imports: [
     AdminRoutingModule,
     ThemeModule,
     NbMenuModule,
+    SharedModule,
   ],
   declarations: [
     AdminComponent,

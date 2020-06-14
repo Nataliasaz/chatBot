@@ -2,15 +2,19 @@
   <h2 style="text-align: center; margin-bottom: 2rem">Войти</h2>
 
 
+    <div class="alert-message-info" *ngIf="message">
+      {{message}}
+    </div>
+
+
     <div class="alert-message" *ngIf="auth.error$ | async as error">
       <nb-alert  outline="danger" role="alert">
         <ul class="alert-message-list">
           <b>Ошибка!</b>
-      {{error}}
+          {{error}}
         </ul>
       </nb-alert>
     </div>
-
 <!--  <div class="alert-message" *ngIf="message">-->
 <!--    <nb-alert  outline="danger" role="alert">-->
 <!--      <ul class="alert-message-list">-->

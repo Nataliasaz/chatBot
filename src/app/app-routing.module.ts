@@ -67,7 +67,6 @@ const config: ExtraOptions = {
 @NgModule({
   imports: [RouterModule.forRoot(routes, config)],
   exports: [RouterModule],
-  providers: [AuthService, AuthGuard],
 })
 export class AppRoutingModule {
 }

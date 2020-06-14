@@ -11,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 import {AuthService} from '../pages/services/auth.service';
 import {SharedModule} from '../pages/shared.module';
 import { LoyoutComponent } from './loyout/loyout.component';
-import {AuthGuard} from "../pages/services/auth.guard";
+import {AuthGuard} from '../pages/services/auth.guard';
 
 
 @NgModule({

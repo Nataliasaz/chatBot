@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TablesComponent } from './tables.component';
 import { SmartTableComponent } from './smart-table/smart-table.component';
 import { TreeGridComponent } from './tree-grid/tree-grid.component';
+import {AuthGuard} from '../../pages/services/auth.guard';
 
 const routes: Routes = [{
   path: '',
