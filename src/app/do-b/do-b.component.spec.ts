@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {DoBComponent} from './do-b.component';
+import {SmartTableDatepickerComponent} from './do-b.component';
 
 
 describe('DoBComponent', () => {
-  let component: DoBComponent;
-  let fixture: ComponentFixture<DoBComponent>;
+  let component: SmartTableDatepickerComponent;
+  let fixture: ComponentFixture<SmartTableDatepickerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DoBComponent ],
+      declarations: [ SmartTableDatepickerComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DoBComponent);
+    fixture = TestBed.createComponent(SmartTableDatepickerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

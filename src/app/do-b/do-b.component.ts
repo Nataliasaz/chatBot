@@ -6,8 +6,8 @@ import { DefaultEditor, ViewCell } from 'ng2-smart-table';
   templateUrl: './do-b.component.html',
   styleUrls: ['./do-b.component.scss'],
 })
-export class DoBComponent  extends DefaultEditor implements OnInit {
-  // SmartTableDatepickerComponent
+export class SmartTableDatepickerComponent  extends DefaultEditor implements OnInit {
+   // SmartTableDatepickerComponent
 @Input() placeholder: string = 'Choose a Date/Time';
 
 @Input() min: Date; // Defaults to now(rounded down to the nearest 15 minute mark)
