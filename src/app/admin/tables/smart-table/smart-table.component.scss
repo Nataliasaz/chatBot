@@ -5,3 +5,27 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+addm{
+  padding: 5px;
+}
+td {
+  font-size: 1.0rem;
+  padding: 5px;
+}
+p {
+  font-size: 1.5rem;
+}
+btn-1{
+
+}
+
+input {
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+
+  &.ng-valid.ng-touched {
+    border: 1px solid green;
+  }
+}

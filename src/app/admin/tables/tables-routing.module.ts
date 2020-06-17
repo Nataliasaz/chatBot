@@ -11,7 +11,7 @@ const routes: Routes = [{
   component: TablesComponent,
   children: [
     {
-      path: 'Мероприятия',
+      path: 'smart-table',
       component: SmartTableComponent,
     },
     {

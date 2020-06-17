@@ -4,7 +4,31 @@
   </nb-card-header>
 
   <nb-card-body>
-    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-    </ng2-smart-table>
+    <span>
+      <input type="text" class="addm" placeholder="Название"><br/>
+      <input type="text" class="addm" placeholder="Описание"><br/>
+      <input type="datetime-local" placeholder="Дата начала"><br/>
+      <input type="datetime-local" placeholder="Дата окончания"><br/>
+      <input type="text" placeholder="Руководитель"><br/>
+      <input type="text" placeholder="Тип мероприятия"><br/>
+    </span>
+    <span>
+       <button class="btn" >Создать</button>
+    </span>
+
+  <div class="card" *ngFor="let even of events">
+      <td>{{even.nameEvent | titlecase}}</td>
+      <td>{{even.description | titlecase}}</td>
+      <td>{{even.beginDate | titlecase}}</td>
+      <td>{{even.endDate | titlecase}}</td>
+      <td>{{even.client.surname | titlecase}}</td>
+      <td>{{even.eventTypes.nameEventType | titlecase}}</td>
+    <p>
+    <span>
+        <button class="btn btn-danger">Удалить</button>
+        <button class="btn">Редактировать</button>
+    </span>
+    </p>
+  </div>
   </nb-card-body>
 </nb-card>

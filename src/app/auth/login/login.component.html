@@ -3,7 +3,12 @@
 
 
     <div class="alert-message-info" *ngIf="message">
-      {{message}}
+      <nb-alert  outline="danger" role="alert">
+        <ul class="alert-message-list">
+          <b>Ошибка!</b>
+          {{message}}
+        </ul>
+      </nb-alert>
     </div>
 
 

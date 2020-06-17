@@ -35,4 +35,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
     //   },
     // ],
   },
+  {
+    title: 'Мероприятия',
+    icon: 'grid-outline',
+    link: '/admin/tables/smart-table',
+    // children: [
+    //   {
+    //     title: 'Smart Table',
+    //     link: '/admin/tables/smart-table',
+    //   },
+    //   {
+    //     title: 'Tree Grid',
+    //     link: '/admin/tables/tree-grid',
+    //   },
+    // ],
+  },
 ];

@@ -26,19 +26,29 @@ export interface Events {
   description: string;
   beginDate: Date;
   endDate: Date;
-  client: null;
-  forms: null;
-  eventTypes: null;
+  client?: string;
+  forms?: string;
+  eventTypes?: {
+    id?: number;
+    nameEventType: string;
+    events?: any;
+  };
 }
-
+export interface EventType {
+  id?: number;
+  nameEventType: string;
+  events?: any;
+}
 @Component({
   selector: 'ngx-tree-grid',
   templateUrl: './tree-grid.component.html',
   styleUrls: ['./tree-grid.component.scss'],
 })
-export class TreeGridComponent implements OnInit{
+export class TreeGridComponent implements OnInit {
   events: Events[] = [];
+  eventType: EventType[] = [];
   customColumn = 'name';
+  title: string = '';
   defaultColumns = [ 'size', 'kind', 'items' ];
   allColumns = [ this.customColumn, ...this.defaultColumns ];
 
@@ -46,12 +56,31 @@ export class TreeGridComponent implements OnInit{
 
   sortColumn: string;
   sortDirection: NbSortDirection = NbSortDirection.NONE;
-
+  arr_name: [];
+  arr_name1: [];
+  event1: string;
   ngOnInit() {
     this.http.get<Events[]>('https://vda-university.herokuapp.com/api/events')
       .subscribe(events => {
-        console.log('Response', events),
           this.events = events;
+          for (const event of events) {
+            console.log(event.nameEvent);
+            console.log(event.id);
+            console.log('Response', event.eventTypes);
+            // this.arr_name1.slice(event.eventTypes);
+            // console.log('Response', event.id);
+            // console.log('Response', event.eventTypes.nameEventType);
+            // console.log('Response', event.eventTypes.nameEventType);
+            const a = event.eventTypes;
+            console.log('!!!', this.arr_name);
+          }
+      });
+    this.http.get<EventType[]>('https://vda-university.herokuapp.com/api/event-types')
+      .subscribe(eventType => {
+        this.eventType = eventType;
+        for (const event of eventType) {
+          console.log('Мероприятия', event.nameEventType);
+        }
       });
   }
   public settings = {
@@ -70,18 +99,15 @@ export class TreeGridComponent implements OnInit{
       confirmDelete: true,
     },
     columns: {
-      id: {
+      nameEvent: {
         title: 'Название мероприятия',
         type: 'string',
       },
-      firstName: {
+      description: {
         title: 'Описание',
         type: 'string',
       },
-    //   <div class="form-group">
-    // <textarea nbInput placeholder="Message"></textarea>
-    // </div>
-      lastName: {
+      beginDate: {
         title: 'Дата начала',
         type: 'custom',
         renderComponent: SmartTableDatepickerRenderComponent,
@@ -93,7 +119,7 @@ export class TreeGridComponent implements OnInit{
           component: SmartTableDatepickerComponent,
         },
       },
-      username: {
+      endDate: {
         title: 'Дата окончания',
         type: 'custom',
         renderComponent: SmartTableDatepickerRenderComponent,
@@ -107,7 +133,7 @@ export class TreeGridComponent implements OnInit{
           },
         },
       },
-      email: {
+      client: {
         title: 'Организатор',
         type: 'string',
         editor: {
@@ -115,15 +141,12 @@ export class TreeGridComponent implements OnInit{
           config: {
             selectText: 'Select',
             list: [
-              { title: 'Сервиченко Б.И'},
-              { title: 'Семенов А.Д'},
-              { title: 'Пученко Ю.А'},
-              { title: 'Николаева Т.В'},
+              { title: 'ccc'},
             ],
           },
         },
       },
-      age: {
+      eventTypes: {
         title: 'Тип мероприятия',
         type: 'string',
         editor: {
@@ -131,9 +154,7 @@ export class TreeGridComponent implements OnInit{
           config: {
             selectText: 'Select',
              list:  [
-               { title: 'Спортивное'},
-               { title: 'Творческое'},
-               { title: 'Научное'},
+               { title: 'ccc'},
             //   {value: '1', title: 'Option 1'},
             //   {value: '2', title: 'Option 2'},
             //   {value: '3', title: 'Option 3'},
